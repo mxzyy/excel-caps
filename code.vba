@@ -1,8 +1,15 @@
-Sub Proper_Case()
-   ' Loop to cycle through each cell in the specified range.
-   For Each x In Range("C1:C5")
-      ' There is not a Proper function in Visual Basic for Applications.
-      ' So, you must use the worksheet function in the following form:
-      x.Value = Application.Proper(x.Value)
-   Next
-End Sub
+Sub AllCaps()  
+    For Each Cell In Selection  
+        If Not Cell.HasFormula Then  
+            Cell.Value = UCase(Cell.Value)  
+        End If  
+    Next Cell  
+End Sub  
+
+' __       __    __     .___  ___.  __   __  ___  __  .______           ___________    __    ____    .___  ___.  __   __  ___  __  .______      
+'|  |     |  |  |  |    |   \/   | |  | |  |/  / |  | |   _  \         /  _____\   \  /  \  /   /    |   \/   | |  | |  |/  / |  | |   _  \     
+'|  |     |  |  |  |    |  \  /  | |  | |  '  /  |  | |  |_)  |       |  |  __  \   \/    \/   /     |  \  /  | |  | |  '  /  |  | |  |_)  |    
+'|  |     |  |  |  |    |  |\/|  | |  | |    <   |  | |      /        |  | |_ |  \            /      |  |\/|  | |  | |    <   |  | |      /     
+'|  `----.|  `--'  |    |  |  |  | |  | |  .  \  |  | |  |\  \----.   |  |__| |   \    /\    /       |  |  |  | |  | |  .  \  |  | |  |\  \----.
+'|_______| \______/     |__|  |__| |__| |__|\__\ |__| | _| `._____|    \______|    \__/  \__/        |__|  |__| |__| |__|\__\ |__| | _| `._____|
+                                                                                                                                               '
